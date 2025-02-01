@@ -1,0 +1,39 @@
+{% assign polygon = site.data.main.polygon %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<canvas id="{{ polygon.id }}" height="200" width="350"></canvas>
+<script>
+  var ctx = document.getElementById("{{ polygon.id }}");
+  var data = {
+  labels: "{{ polygon.data | map: "attribute" | join: "," }}".split(","),
+  datasets: [{
+    label: "{{ polygon.label }}",
+    backgroundColor: "rgba(179,181,198,0.2)",
+    borderColor: "#3385FF",
+    pointBackgroundColor: "#3385FF",
+    pointBorderColor: "#fff",
+    pointHoverBackgroundColor: "#3385FF",
+    pointHoverBorderColor: "#3385FF",
+    data: [{{ polygon.data | map: "value" | join: ", " }}]
+    }]
+  };
+  var myRadarChart = new Chart(ctx, {
+  type: 'radar',
+  data: data,
+  options: {
+    layout: {padding: 10},
+    scale: {
+        responsive: true,
+        ticks: {min: 0, max: 100, stepSize: 20, display: false},
+        lineArc: false,
+        pointLabels: {fontSize: 14},
+    },
+    scaleFontSize: 0,
+    legend: {display: false},
+  }
+  });
+</script>
+
+<!-- End Attribute Polygon -->
+
+<!-- SOURCE: https://github.com/renyuanz/leonids -->

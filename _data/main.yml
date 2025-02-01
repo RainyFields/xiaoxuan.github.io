@@ -1,70 +1,47 @@
-# Image, name, profession in the sidebar
+# Image, author, signature in the sidebar
 
-image: /assets/images/author-image.jpg
-name: John Doe
-profession: A Web Developer
-email: john@doe.com # The contact form submissions will be received in this email address.
+image: /assets/images/avatar.jpg
+author: Zhaocheng Zhu
+signature: Researcher
+email:
 
 # Menu items in the sidebar
 # Use a maximum of 3 items
 menu:
+  - title: Publications
+    link: /publications/
   - title: Projects
     link: /projects/
+  - title: Random
+    link: /random/
 
-  - title: Blog
-    link: /blog/
-
-  - title: Contact
-    link: /contact/
-
-
+polygon:
+  label: strength
+  id: ability
+  data:
+  - attribute: programming
+    value: 85
+  - attribute: creativity
+    value: 75
+  - attribute: photography
+    value: 90
+  - attribute: diligence
+    value: 65
+  - attribute: math
+    value: 40
 
 # Social icons in the sidebar
 # use font awesome icon code in the 'icon:' value
 social:
-  facebook:
-       icon: fa-facebook-square
-       link: https://facebook.com
-
-  twitter:
-      icon: fa-twitter
-      link: https://twitter.com
-
-  linkedin:
-      icon: fa-linkedin
-      link: https://linkedin.com
-
-  github:
-      icon: fa-github
-      link: https://github.com
-
-
-
-expertise:
-  - title: HTML5
-    level: 45
-    color: rgb(247, 205, 182)
-
-  - title: CSS3
-    level: 65
-    color: rgb(113, 178, 222)
-
-  - title: jQuery
-    level: 50
-    color: rgb(80, 185, 185)
-
-  - title: PHP
-    level: 40
-    color: rgb(124, 142, 222)
-
-  - title: WordPress
-    level: 75
-    color: rgb(160, 158, 158)
-
-  - title: SEO
-    level: 90
-    color: rgb(112, 195, 148)
-
-  - title: Photoshop
-    level: 70
-    color: rgb(230, 133, 172)
+  - title: Google Scholar
+    icon: ai-google-scholar
+    link: https://scholar.google.com/citations?user=Qd8JumkAAAAJ
+  - title: GitHub
+    icon: fa-github
+    link: https://github.com/KiddoZhu
+  - title: LinkedIn
+    icon: fa-linkedin
+    link: https://www.linkedin.com/in/zhaocheng-zhu-24756213b/
+  - title: Twitter
+    icon: fa-twitter
+    link: https://x.com/zhu_zhaocheng

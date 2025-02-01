@@ -232,8 +232,6 @@ a.nostyle {
             /* font-size: $small-fs; */
             +li:before {
                 content: '| ';
-
-
             }
 
 
@@ -255,6 +253,8 @@ a.nostyle {
          i {
             font-size: $base-fs * 1.1;
             border: 1px solid;
+			width: 40px;
+			height: 40px;
             padding: 10px;
             border-radius: 50%;
             color: white;
@@ -280,22 +280,22 @@ a.nostyle {
 
 .blog {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 5fr;
     grid-gap: 10px;
     margin-bottom: 1.25em;
     @include media-query($on-palm) {
         display: block;
     }
     .image {
-            height: 200px;
+            height: 100%;
             width: 100%;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
             transition: all 200ms ease-in;
-                @include media-query($on-palm) {
-                      height: 200px;
-             }
+            @include media-query($on-palm) {
+                height: 100%;
+            }
     }
 
     .content {
@@ -303,26 +303,38 @@ a.nostyle {
     }
 }
 
-.projects {
+.resources {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-     @include media-query($on-palm) {
-          display: block;
-        }
-    .project {
+    @include media-query($on-palm) {
+      display: block;
+    }
+    .resource {
         margin-bottom: 1em;
     }
-    .project-image {
+    .resource-image {
         background-size: cover;
         background-repeat: no-repeat;
         height: 200px;
         width: 100%;
         border-bottom: 1px solid #eee;
     }
+    .resource-text {
+        margin: 0px 10px;
+        padding: 10px;
+        font-size: 16px;
+        height: 130px;
+        background-size: cover;
+        border-top: 1px solid #eee;
+        @include media-query($on-palm) {
+            height: auto;
+        }
+    }
 
     .title {
-        margin: 10px;
+        background-color: lighten($brand-color, 40%);
+        padding: 10px 0;
     }
 }
 
@@ -366,8 +378,8 @@ a.nostyle {
 
     .input-group-text {
       color: white;
-      background-color: #1abc9c;
-      border: 1px solid #1abc9c;
+      background-color: $brand-color;
+      border: 1px solid $brand-color;
     }
 
 }
@@ -378,4 +390,8 @@ a.nostyle {
 
 .copy {
     color: $grey-color;
+}
+
+.emphasis {
+    color: #d14b4b;
 }

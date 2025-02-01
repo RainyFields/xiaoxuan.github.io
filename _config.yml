@@ -10,9 +10,9 @@
 # Changing title and description according to your website requirement is important.
 
 
-title: Blackcurrant
-description: Blackcurrant is a minimal theme to show off your skills online.
-url: https://blackcurrant.jekyll-themes.com
+title: Zhaocheng Zhu
+description: Zhaocheng Zhu's homepage
+url: kiddozhu.github.io
 
 # For more customizations, go to  _data/main.yml
 
@@ -29,11 +29,12 @@ url: https://blackcurrant.jekyll-themes.com
 # Remove # before 'color-scheme' to activate particular color scheme.
 # You can add your own color code as well.
 
-color-scheme: '#1abc9c' # Green
+# color-scheme: '#1abc9c' # Green
 # color-scheme: '#2693e6' # Blue
 # color-scheme: '#987ce6' # Purple
 # color-scheme: '#ea67a8' # Pink
 # color-scheme: '#ec632b' # Orange
+color-scheme: '#4c9ad1'
 
 
 # Kramdown is the default markdown processor used. It is supported by Github.
@@ -45,26 +46,35 @@ enable-mathjax: yes
 # Charts
 enable-chartjs: yes
 
-
 # This defines how the URLs should look like.
 permalink: /blog/:title/
 
 # Pagination - Posts per page in the blog index.
-paginate: 4
-paginate_path: /blog/page:num/
-
+pagination:
+  enabled: true
+  per_page: 20
+  permalink: /:num/
+  sort_field: "time"
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
 
 # Jekyll will read contents inside _pages only if we tell it to.
 include:
-    - _pages
+  - _pages
+
+# Keep the git repo in the destination directory
+keep_files:
+  - .git
 
 # Google Ananlytics Tracker.
 # Sign up with Google analytics and replce with your analytics ID.
-analytics: UA-92266803-3
+analytics:
 
 # Table of contents in each post
 # Change the value to 'no' if Table of Contents is not required.
-toc:  yes
+toc: yes
 
 # Share buttons
 # Change it to `no` to remove share buttons.
@@ -74,7 +84,7 @@ share: yes
 # Comments by Disqus
 # Sign up with Disqus to get your shortcode. Leave it blank if you do not want to run diqus code on the website.
 # Leave it blank to remove disqus completely.
-disqus: webjeda-demo
+disqus:
 
 
 # Define whether recent posts should be shown at the bottom of each post.
@@ -112,20 +122,23 @@ compress_html:
   startings: []
 
 
-
-
 collections:
-    projects:
-        output: true
-        permalink: /projects/:path/
+  - papers
+  - projects
 
 exclude:
-    - .git
+  - .git
 
 
 # These plugins are supported by github by default and can be installed locally using ruby gems
 plugins:
-    - jekyll-sitemap    # Adds sitemap to the website at /sitemap.xml
-    - jekyll-feed       # Adds feed to the website at /feed.xml
-    - jekyll-paginate   # Used for sorting posts by page numbers.
-    - jekyll-seo-tag    # Adds all the important SEO meta tags by default.
+  - jekyll-sitemap     # Adds sitemap to the website at /sitemap.xml
+  - jekyll-feed        # Adds feed to the website at /feed.xml
+  - jekyll-paginate-v2 # Used for sorting posts by page numbers.
+  - jekyll-seo-tag     # Adds all the important SEO meta tags by default.
+
+whitelist:
+  - jekyll-sitemap    
+  - jekyll-feed       
+  - jekyll-paginate-v2
+  - jekyll-seo-tag    

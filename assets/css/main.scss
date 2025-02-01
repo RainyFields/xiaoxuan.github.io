@@ -9,6 +9,7 @@ $base-fs:          18px;
 $base-fw:          400;
 $small-fs:         $base-fs * 0.775;
 $base-lh:          1.7;
+$small-lh:         max($base-lh * 0.8, 1.5);
 $color:            #555;
 $brand-color:      {{site.color-scheme}};
 $h-color:          #eee;
@@ -68,6 +69,5 @@ $on-laptop:        800px;
         "author",
         "share",
         "skillbar",
-        "custom"
-
+		"gallery"
 ;

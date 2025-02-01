@@ -4,7 +4,7 @@ layout: compress
 
 
 <!--
-This layout is used in all pages. Making changes here will efect all pages. We recommend not to change anything here.
+This layout is used in all pages. Making changes here will effect all pages. We recommend not to change anything here.
  -->
 
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ This layout is used in all pages. Making changes here will efect all pages. We r
 				</div>
 				<hr class="dashed">
 				<main>
-					{{content}}
+					{{ content | markdownify }}
 				</main>
 				<div id="search-container"></div>
 				<hr class="dashed">
@@ -56,7 +56,7 @@ This layout is used in all pages. Making changes here will efect all pages. We r
 
 
 <!-- JQuery  -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 
 

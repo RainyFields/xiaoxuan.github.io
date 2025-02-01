@@ -36,8 +36,8 @@ This layout is used for posts. Changing anything here will affect all posts(not 
 {% include share-buttons.html %}
 {% endif %}
 
-{% if page.categories %}
-{% include categories-post.html %}
+{% if page.tags %}
+{% include tags.html tags=page.tags %}
 {% endif %}
 
 {% if site.disqus %}

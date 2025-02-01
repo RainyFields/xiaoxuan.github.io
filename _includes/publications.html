@@ -1,0 +1,26 @@
+{% for paper in paginator.posts %}
+<div class="blog cards borders blog-list">
+  <div class="image" style="background-image: url({{ paper.image }});"></div>
+  <div class="content">
+	{% assign me = site.data.main.author %}
+	{% assign bold_me = "<b>" | append: site.data.main.author | append: "</b>" %}
+    <h5 class="title">{{ paper.title }}</h5>
+    {% for author in paper.authors %}
+      {{ author | replace: me, bold_me }}{% if author != paper.authors.last %},{% endif %}
+    {% endfor %}
+    <br>
+    {{ paper.conference }} {{ paper.time | slice: 0, 4 }}
+    {% if paper.highlight %}
+      <span class="emphasis">({{ paper.highlight }})</span>
+    {% endif %}
+    {% if paper.links.size > 4 %}<br>{% else %}&nbsp;{% endif %}
+    {% for item in paper.links %}
+      <a href="{{ item.link }}">{{ item.title }}</a>
+      {% if item != paper.links.last %}/{% endif %}
+    {% endfor %}
+    {% if include.tags %}
+      {% include tags.html tags=paper.tags %}
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
